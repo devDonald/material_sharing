@@ -107,7 +107,7 @@ class _CreateNewsState extends State<CreateNews> {
                 },
               ),
               Text(
-                error ?? '',
+                error,
                 style: TextStyle(color: Colors.red),
               ),
               Align(
@@ -147,7 +147,9 @@ class _CreateNewsState extends State<CreateNews> {
                             backgroundColor: Colors.red,
                             textColor: Colors.white,
                             fontSize: 16.0);
-                      } else {}
+                      } else {
+                        successToastMessage(msg: 'News Successfully Shared');
+                      }
                     }),
               ),
             ],

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:material_sharing/login_screen.dart';
 
 import 'core/constants/contants.dart';
 import 'core/themes/theme_colors.dart';
@@ -82,7 +84,11 @@ class _ResetPasswordState extends State<ResetPassword> {
                     elevation: 7.0,
                     child: GestureDetector(
                         onTap: () async {
-                          if (validateEmail(_email.text)) {}
+                          if (validateEmail(_email.text)) {
+                            successToastMessage(
+                                msg: 'Password Reset Email Sent');
+                            Get.to(() => LoginScreen());
+                          }
                         },
                         child: const Center(
                             child: Text(

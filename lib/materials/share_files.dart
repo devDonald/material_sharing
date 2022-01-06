@@ -202,6 +202,8 @@ class _CreateLectureShareState extends State<CreateLectureShare> {
                       buttonTitle: 'Share'.toUpperCase(),
                       onTap: () {
                         if (_topic.text != '' && _course.text != '') {
+                          successToastMessage(msg: 'Material successfully shared');
+
                         } else {
                           setState(() {
                             error = 'Topic, and Course cannot be empty';

@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:material_sharing/core/constants/contants.dart';
 import 'package:material_sharing/materials/files_widget.dart';
 
 import 'share_files.dart';
@@ -35,13 +36,17 @@ class _FilesHomeState extends State<FilesHome> {
           LectureShareContainer(
             fileTypeIcon: Icons.picture_as_pdf,
             timeStamp: '1 hr ago',
-            noOfDownloads: '5',
+            noOfDownloads: '95',
             userName: 'Ebuga Donald',
             isSourced: false,
             course: "Computer Science",
             level: 'Undergraduate',
             topic: "Analysis of Algorithms",
             fileName: 'algorithm.pdf',
+            onDownloadTap: () {
+              successToastMessage(
+                  msg: 'Material successfully downloaded to Device');
+            },
           ),
           LectureShareContainer(
             fileTypeIcon: Icons.picture_as_pdf,
@@ -53,6 +58,10 @@ class _FilesHomeState extends State<FilesHome> {
             level: 'Undergraduate',
             topic: "Quantum Physics",
             fileName: 'quantum.pdf',
+            onDownloadTap: () {
+              successToastMessage(
+                  msg: 'Material successfully downloaded to Device');
+            },
           ),
           LectureShareContainer(
             fileTypeIcon: Icons.picture_as_pdf,
@@ -64,6 +73,10 @@ class _FilesHomeState extends State<FilesHome> {
             level: 'Postgraduate',
             topic: "Organic Chemistry",
             fileName: 'organic.pdf',
+            onDownloadTap: () {
+              successToastMessage(
+                  msg: 'Material successfully downloaded to Device');
+            },
           ),
         ],
       ),

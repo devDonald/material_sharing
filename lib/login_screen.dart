@@ -139,6 +139,8 @@ class LoginScreen extends StatelessWidget {
                       roundedEdge: 10,
                       onTap: () async {
                         if (validateLogin(_email.text, _password.text)) {
+                          successToastMessage(
+                              msg: 'User authentication Successful');
                           Get.to(() => const HomeScreen());
                         }
                       },
@@ -150,6 +152,8 @@ class LoginScreen extends StatelessWidget {
                       color: JanguAskColors.redColor,
                       onTap: () async {
                         //controller.googleLogin();
+                        successToastMessage(
+                            msg: 'Google authentication Successful');
                         Get.to(() => const HomeScreen());
                       },
                     ),
@@ -160,6 +164,8 @@ class LoginScreen extends StatelessWidget {
                       color: JanguAskColors.blueColor,
                       onTap: () async {
                         //controller.googleLogin();
+                        successToastMessage(
+                            msg: 'Facebook authentication Successful');
                         Get.to(() => const HomeScreen());
                       },
                     ),

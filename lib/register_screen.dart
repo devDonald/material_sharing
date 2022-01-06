@@ -357,6 +357,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 level,
                                 gender,
                                 _confirmPassword.text)) {
+                              successToastMessage(
+                                  msg: 'Registration Successful');
                               Get.to(() => const HomeScreen());
                             }
                           },
@@ -368,6 +370,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           platformIcon: JanguAskImages.googleLogo,
                           color: JanguAskColors.redColor,
                           onTap: () async {
+                            successToastMessage(
+                                msg: 'Google Registration Successful');
                             Get.to(() => const HomeScreen());
                           },
                         ),
@@ -378,6 +382,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           platformIcon: JanguAskImages.fbLogo,
                           color: JanguAskColors.blueColor,
                           onTap: () async {
+                            successToastMessage(
+                                msg: 'Facebook Registration Successful');
                             Get.to(() => const HomeScreen());
                           },
                         ),

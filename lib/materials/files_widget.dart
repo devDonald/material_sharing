@@ -167,7 +167,7 @@ class _LectureShareContainerState extends State<LectureShareContainer>
                       widget.fileName ?? '',
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black,
                         fontSize: 12.0,
                       ),
@@ -177,8 +177,8 @@ class _LectureShareContainerState extends State<LectureShareContainer>
               ),
             ),
           ),
-          SizedBox(height: 8.5),
-          SizedBox(height: 8.5),
+          const SizedBox(height: 8.5),
+          const SizedBox(height: 8.5),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
@@ -186,17 +186,17 @@ class _LectureShareContainerState extends State<LectureShareContainer>
                 onTap: widget.onDownloadTap,
                 child: Row(
                   children: <Widget>[
-                    Icon(
+                    const Icon(
                       Icons.preview_sharp,
                       color: Colors.grey,
                       size: 15.0,
                     ),
-                    SizedBox(width: 4.7),
+                    const SizedBox(width: 4.7),
                     Text(
-                      '${widget.noOfDownloads} Views' ?? '0',
+                      '${widget.noOfDownloads} Views',
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.orange,
                         fontSize: 11.0,
                       ),
@@ -209,17 +209,17 @@ class _LectureShareContainerState extends State<LectureShareContainer>
                 children: <Widget>[
                   Row(
                     children: <Widget>[
-                      Icon(
+                      const Icon(
                         Icons.timer,
                         size: 15.0,
                         color: Colors.grey,
                       ),
-                      SizedBox(width: 4.7),
+                      const SizedBox(width: 4.7),
                       Text(
                         widget.timeStamp ?? '',
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.grey,
                           fontSize: 11.0,
                         ),
@@ -230,8 +230,8 @@ class _LectureShareContainerState extends State<LectureShareContainer>
               ),
             ],
           ),
-          SizedBox(height: 14.7),
-          Divider(
+          const SizedBox(height: 14.7),
+          const Divider(
             height: 3.0,
             color: Colors.grey,
           ),
@@ -247,7 +247,7 @@ class _LectureShareContainerState extends State<LectureShareContainer>
                       width: 30.0,
                       height: 29.5,
                     ),
-                    SizedBox(width: 8.5),
+                    const SizedBox(width: 8.5),
                     Text(
                       widget.userName ?? '',
                       maxLines: 1,
@@ -261,13 +261,16 @@ class _LectureShareContainerState extends State<LectureShareContainer>
                   ],
                 ),
               ),
-              Icon(
-                Icons.download,
-                color: Colors.green,
+              GestureDetector(
+                onTap: widget.onDownloadTap,
+                child: const Icon(
+                  Icons.download,
+                  color: Colors.green,
+                ),
               )
             ],
           ),
-          SizedBox(height: 9.7),
+          const SizedBox(height: 9.7),
         ],
       ),
     );

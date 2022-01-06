@@ -22,7 +22,7 @@ class _SubCategoryState extends State<SubCategory> {
         elevation: 3.0,
         backgroundColor: Colors.pink,
         title: Text('${widget.categroy} News',
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 18.0,
               fontWeight: FontWeight.bold,

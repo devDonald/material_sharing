@@ -1,7 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:material_sharing/about_us.dart';
+import 'package:material_sharing/contact_us.dart';
+import 'package:material_sharing/login_screen.dart';
 import 'package:material_sharing/news/news_home.dart';
+import 'package:material_sharing/profile_screen.dart';
 
+import 'core/constants/contants.dart';
 import 'materials/files_home.dart';
 
 String profilePic =
@@ -29,15 +35,24 @@ class _HomeScreenState extends State<HomeScreen> {
         length: 2,
         child: Scaffold(
           appBar: AppBar(
-            title: Text('Home'),
+            title: const Text('Home'),
             automaticallyImplyLeading: false,
             actions: <Widget>[
               PopupMenuButton<String>(
-                icon: Icon(Icons.more_vert),
+                icon: const Icon(Icons.more_vert),
                 tooltip: 'options',
                 onSelected: (choice) {
                   if (choice == UserMenu.myProfile) {
-                  } else if (choice == UserMenu.logout) {}
+                    Get.to(() => ProfileScreen());
+                  } else if (choice == UserMenu.logout) {
+                    Navigator.of(context).pop();
+                    successToastMessage(msg: 'Logout Successful');
+                    Get.to(() => LoginScreen());
+                  } else if (choice == UserMenu.about) {
+                    Get.to(() => AboutUs());
+                  } else if (choice == UserMenu.contact) {
+                    Get.to(() => const ContactUs());
+                  }
                 },
                 itemBuilder: (BuildContext context) {
                   return UserMenu.choices.map((String choice) {
@@ -49,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
             ],
-            bottom: TabBar(
+            bottom: const TabBar(
               indicatorColor: Colors.white,
               tabs: [
                 Tab(
@@ -63,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          body: TabBarView(
+          body: const TabBarView(
             children: [FilesHome(), NewsHome()],
           ),
         ),
